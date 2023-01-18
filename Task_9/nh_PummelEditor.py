@@ -146,8 +146,7 @@ class PumlEditor(GuiBaseClass):
         self.korki_encoder = KrokiEncoder()
         self.image = tk.PhotoImage(data=default_image)
         self.image_label.configure(image=self.image)
-
-        # add status bar
+         # add status bar
         self.add_status_bar()
         self.set_status_bar_text("TestText")
         self.set_status_bar_progress(100)

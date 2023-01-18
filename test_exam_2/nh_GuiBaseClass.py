@@ -2,6 +2,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import messagebox
 import sys
+from DGStatusBar import DGStatusBar
 
 
 class GuiBaseClass():
@@ -13,19 +14,13 @@ class GuiBaseClass():
 
         # add menu option help
         menu_help = tk.Menu(self.menubar)
-        self.menubar.add_cascade(menu=menu_help, label="Help", underline=0,)
+        self.menubar.add_cascade(menu=menu_help, label="Help", underline=0, )
         menu_help.add_separator()
         menu_help.add_command(label="help", command=self.help, underline=0)
 
-        # add menu option About
-        menu_about = tk.Menu(self.menubar)
-        self.menubar.add_cascade(menu=menu_about, label="About", underline=0, )
-        menu_about.add_separator()
-        menu_about.add_command(label="about", command=self.about, underline=0)
-
         # add menu option file
         menu_file = tk.Menu(self.menubar)
-        self.menubar.add_cascade(menu=menu_file, label='File', underline=0,)
+        self.menubar.add_cascade(menu=menu_file, label='File', underline=0, )
         menu_file.add_separator()
         menu_file.add_command(label='Exit', command=self.exit, underline=1)
 
@@ -36,9 +31,12 @@ class GuiBaseClass():
         self.menu['menubar'] = self.menubar
         self.menu['File'] = menu_file
         self.menu['Help'] = menu_help
-        self.menu['About'] = menu_about
+
         self.frame = tk.Frame(self.root)
         self.frame.pack(fill="both", expand=True)
+
+        # add status bar
+        self.status_bar = DGStatusBar(self.root)
 
     # public functions
     def main_loop(self):
@@ -58,6 +56,16 @@ class GuiBaseClass():
                 last, menu=self.menu[entry], label=entry)
             return self.menu[entry]
 
+    # Add the status barS
+    def add_status_bar(self):
+        self.status_bar.pack(fill="x", expand=False)
+
+    def set_status_bar_text(self, msg: str):
+        self.status_bar.set(msg)
+
+    def set_status_bar_progress(self, progress: float):
+        self.status_bar.progress(progress)
+
     # private functions
     def exit(self, ask=True):
         if ask:
@@ -74,6 +82,10 @@ class GuiBaseClass():
 
     def about(self):
         print("about menu")
+
+    def load_class_diagram(self):
+        pass
+
 
 if __name__ == '__main__':
     root = tk.Tk()
