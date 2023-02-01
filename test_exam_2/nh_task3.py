@@ -105,3 +105,5 @@ if __name__ == '__main__':
         fasta_gui = FastaParserGui(root, file_name)
         root.title("Fasta Gui")
         fasta_gui.main_loop()
+
+#%%

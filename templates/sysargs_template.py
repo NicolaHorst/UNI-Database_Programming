@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
 import sys
 import os
+from typing import Dict
 
+# Definition of different argument types
 arg_1: str = "--arg1"  # only a flag
 arg_2: str = "--arg2"  # arg with following value
 arg_3: str = "--arg3"  # arg with following values
 arg_4: str = "--arg4"  # arg with single value
-file_names: str = "files"  # arg is file name
-arg_5: str = "--arg5" # arg with different options
+
+arg_5: str = "--arg5"  # arg with different options
 arg5_choices: list = ["choice1", "choice2", "choice3"]
 
+file_names: str = "files"  # arg is file name
 file_ending1: str = ".fasta"
 file_ending2: str = ".txt"
 
-mandatory_args: dict = {arg_1: False, arg_2: "", arg_3: [], arg_4: "", file_names: [], arg_5: ""}
+def workload(arguments: Dict):
+    pass
 
 
 def usage():
@@ -29,6 +33,8 @@ def usage():
 
 
 def main(args):
+    mandatory_args: dict = {arg_1: False, arg_2: "", arg_3: [], arg_4: "", file_names: [], arg_5: ""}
+
     # Show usage when no arg is given or when help is used
     if len(args) == 1 or "-h" in args or "--help" in args:
         usage()
@@ -91,4 +97,3 @@ def main(args):
 
 if __name__ == "__main__":
     main(sys.argv)
-    print(mandatory_args)
