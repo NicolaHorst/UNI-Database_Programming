@@ -1,8 +1,11 @@
+from typing import List
+import os
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import messagebox
 import sys
 from templates.DGStatusBar import DGStatusBar
+import tkinter.filedialog as fd
 
 
 class GuiBaseClass():
@@ -12,16 +15,16 @@ class GuiBaseClass():
         self.menu = dict()
         self.menubar = tk.Menu(root)
 
+        # add menu option file
+        menu_file = tk.Menu(self.menubar)
+        self.menubar.add_cascade(menu=menu_file, label='File', underline=0,)
+        menu_file.add_separator()
+        menu_file.add_command(label='Exit', command=self.exit, underline=1)
+
         # add menu option help
         menu_help = tk.Menu(self.menubar)
         self.menubar.add_cascade(menu=menu_help, label="Help", underline=0, )
         menu_help.add_command(label='Exit', command=self.exit, underline=0)
-
-        # add menu option file
-        menu_file = tk.Menu(self.menubar)
-        self.menubar.add_cascade(menu=menu_file, label='File', underline=0, )
-        menu_file.add_separator()
-        menu_file.add_command(label='Exit', command=self.exit, underline=1)
 
         # add menu to root.config
         self.root.config(menu=self.menubar)
@@ -82,8 +85,19 @@ class GuiBaseClass():
     def about(self):
         print("about menu")
 
-    def load_class_diagram(self):
-        pass
+    def open_file_dialog(self) -> str:
+        """
+        open a file dialog and return the file name
+        :return: file_name
+        """
+        return fd.askopenfilename(initialdir=os.getcwd())
+
+    def open_dir_name_dialog(self) -> str:
+        """
+        open a file dialog and return dir name
+        :return: dir_name
+        """
+        return fd.askdirectory(initialdir=os.getcwd())
 
 
 if __name__ == '__main__':

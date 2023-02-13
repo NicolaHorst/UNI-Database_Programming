@@ -51,24 +51,27 @@ class SampleGui(GuiBaseClass):
     def __init__(self, root, file_name):
         super().__init__(root=root)
 
-        # generic file name check
-        if not os.path.exists(file_name):
-            self.file_name: str = self.open_file_dialog()
-        else:
-            self.file_name: str = file_name
+        # setting file names
+        self.file_name: str = file_name if os.path.isfile(file_name) else self.open_file_dialog()
+
+        # setting dir name
+        self.dir_name: str = ""  # = dir_name if os.path.isdir(dir_name) else self.open_dir_name_dialog
+        # names = os.listdir(self.dir_name)
+        # self.file_names = [name for name in names if name.endswith(".dat") or name.endswith(".dat.gz")]
 
         # open the given file and add a dictionary representation of it
         self.file_dict = generic_file_reader_wrapper(fn=file_name)
-
-        # Add Menu help
-        help_menu = self.get_menu("Help")
-        help_menu.add_separator()
-        help_menu.add_command(label='Help', command=usage, underline=1)
 
         # Add Menu File
         file_menu = self.get_menu("File")
         file_menu.add_separator()
         file_menu.add_command(label='Open New File', command=self.open_file_name, underline=1)
+        file_menu.add_command(label='Open New Directory', command=self.open_dir_name, underline=1)
+
+        # Add Menu help
+        help_menu = self.get_menu("Help")
+        help_menu.add_separator()
+        help_menu.add_command(label='Help', command=usage, underline=1)
 
         # starting the layout
         # first create the frame for the entry and the buttons
@@ -113,14 +116,6 @@ class SampleGui(GuiBaseClass):
         """
         print("Button 2 was pressed")
 
-    @staticmethod
-    def open_file_dialog() -> str:
-        """
-        Open a file dialog and return the file name
-        :return: file name
-        """
-        return fd.askopenfilename()
-
     def open_file_name(self) -> None:
         """
         open file dialog and ask for a file_name and then open the file and transform it to a dictionary
@@ -129,6 +124,9 @@ class SampleGui(GuiBaseClass):
         self.file_name = self.open_file_dialog()
         self.file_dict = generic_file_reader_wrapper(fn=file_name)
         self.set_status_bar_text(self.file_name.split("/")[-1])
+
+    def open_dir_name(self):
+        self.dir_name = self.open_dir_name_dialog()
 
     def main_loop(self):
         self.root.mainloop()

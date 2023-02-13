@@ -1,23 +1,12 @@
 #!/usr/bin/env python3
 import sys
 import os
-from typing import Dict
+from typing import Dict, List
 
-# Definition of different argument types
-arg_1: str = "--arg1"  # only a flag
-arg_2: str = "--arg2"  # arg with following value
-arg_3: str = "--arg3"  # arg with following values
-arg_4: str = "--arg4"  # arg with single value
-
-arg_5: str = "--arg5"  # arg with different options
-arg5_choices: list = ["choice1", "choice2", "choice3"]
-
-file_names: str = "files"  # arg is file name
-file_ending1: str = ".fasta"
-file_ending2: str = ".txt"
 
 def workload(arguments: Dict):
-    pass
+    print(f"All Fine")
+    print(f"using {arguments} for workload")
 
 
 def usage():
@@ -33,66 +22,52 @@ def usage():
 
 
 def main(args):
-    mandatory_args: dict = {arg_1: False, arg_2: "", arg_3: [], arg_4: "", file_names: [], arg_5: ""}
+    # Definition of different argument types
+    arg_1: str = "--arg1"  # Only a flag
+    arg_2: str = "--arg2"  # Choice
+    arg_3: str = "--arg3"  # List of args
+    mandatory_args: dict = {arg_1: "", arg_2: "", arg_3: []}
+
+    min_args: int = len(mandatory_args.keys())
 
     # Show usage when no arg is given or when help is used
     if len(args) == 1 or "-h" in args or "--help" in args:
         usage()
     # otherwise use logic
-    elif len(args) > 1:
-        multiple_args_index: int = 0
-        if args[1] == arg_1:
-            mandatory_args[arg_1] = True
-
-        if args[2] == arg_2:
-            mandatory_args[arg_2] = args[3]
+    elif len(args) > 3:
+        choices_a1: List = [arg_1]
+        if args[1] in choices_a1:
+            mandatory_args[arg_1] = args[1]
         else:
-            print(f"arg: {args[2]}, does not match the required arg for this position {arg_2}")
+            print(f"Error:\t{args[1]} is invalid expected one of the following {choices_a1}")
+            exit()
 
-        if args[4] == arg_3:
-            multiple_args_index = 4
-            while True:
-                multiple_args_index += 1
-                # when end of args is reached
-                if len(args) <= multiple_args_index:
-                    break
-                # when reached the next arg
-                if args[multiple_args_index] in mandatory_args.keys():
-                    break
-
-                # when arg is a file or none file
-                if args[multiple_args_index].endswith(file_ending1) or args[multiple_args_index].endswith(file_ending2):
-                    break
-
-                mandatory_args[arg_3].append(args[multiple_args_index])
+        choices_a2: List = [arg_2]
+        if args[2] in choices_a2:
+            mandatory_args[arg_2] = args[2]
         else:
-            print(f"arg: {args[4]}, does not match the required arg for this position {arg_3}")
+            print(f"Error:\t{args[2]} is invalid expected one of the following {choices_a2}")
+            exit()
 
-        if args[multiple_args_index] == arg_4:
-            multiple_args_index += 1
-            mandatory_args[arg_4] = args[multiple_args_index]
-            multiple_args_index += 1
-
-        # get the provided file name(s)
-        while True:
-            fn = args[multiple_args_index]
-            if fn.endswith(file_ending1) or fn.endswith(file_ending2):
-                if os.path.isfile(fn):
-                    mandatory_args[file_names].append(fn)
+        start_index: int = 3
+        for fn in args[start_index:]:
+            if os.path.isfile(fn):
+                pass
+                if fn.endswith(".dat") or fn.endswith(".dat.gz"):
+                    mandatory_args[arg_3].append(fn)
                 else:
-                    print(f"file {fn} does not exist")
+                    print(f"Info:\tfile: {fn} is wrong filetype")
             else:
-                print(f"file type mismatch pleas use one of the following endings {file_ending1}, {file_ending2}")
-            multiple_args_index += 1
-            if len(args) <= multiple_args_index:
-                break
-                # when reached the next arg
+                print(f"Info:\tfile: {fn} does not exist")
 
-            if args[multiple_args_index] in mandatory_args.keys():
-                break
+        if not mandatory_args[arg_3]:
+            print("Error:\tNo matching file names were provided")
+            exit()
 
-        if args[multiple_args_index] in arg5_choices:
-            mandatory_args[arg_5] = args[multiple_args_index]
+        workload(arguments=mandatory_args)
+    else:
+        print(f"Error:\tNot enough arguments were given expected at least {min_args} arguments but {len(args) - 1} were given\n")
+        usage()
 
 
 if __name__ == "__main__":

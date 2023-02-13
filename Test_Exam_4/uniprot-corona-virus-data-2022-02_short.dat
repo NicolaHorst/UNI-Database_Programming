@@ -1,0 +1,373 @@
+ID   AP3A_BC279              Reviewed;         274 AA.
+AC   Q0Q474;
+DT   29-MAY-2007, integrated into UniProtKB/Swiss-Prot.
+DT   05-SEP-2006, sequence version 1.
+DT   29-SEP-2021, entry version 66.
+DE   RecName: Full=Protein 3;
+DE   AltName: Full=Accessory protein 3;
+GN   ORFNames=3;
+OS   Bat coronavirus 279/2005 (BtCoV) (BtCoV/279/2005).
+OC   Viruses; Riboviria; Orthornavirae; Pisuviricota; Pisoniviricetes;
+OC   Nidovirales; Cornidovirineae; Coronaviridae; Orthocoronavirinae;
+OC   Betacoronavirus; Sarbecovirus.
+OX   NCBI_TaxID=389167;
+OH   NCBI_TaxID=196889; Rhinolophus macrotis (Big-eared horseshoe bat).
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC RNA].
+RX   PubMed=16840328; DOI=10.1128/jvi.00697-06;
+RA   Tang X.C., Zhang J.X., Zhang S.Y., Wang P., Fan X.H., Li L.F., Li G.,
+RA   Dong B.Q., Liu W., Cheung C.L., Xu K.M., Song W.J., Vijaykrishna D.,
+RA   Poon L.L.M., Peiris J.S.M., Smith G.J., Chen H., Guan Y.;
+RT   "Prevalence and genetic diversity of coronaviruses in bats from China.";
+RL   J. Virol. 80:7481-7490(2006).
+CC   -!- FUNCTION: Forms homotetrameric potassium sensitive ion channels
+CC       (viroporin) and may modulate virus release. Up-regulates expression of
+CC       fibrinogen subunits FGA, FGB and FGG in host lung epithelial cells.
+CC       Induces apoptosis in cell culture. Downregulates the type 1 interferon
+CC       receptor by inducing serine phosphorylation within the IFN alpha-
+CC       receptor subunit 1 (IFNAR1) degradation motif and increasing IFNAR1
+CC       ubiquitination (By similarity). {ECO:0000250}.
+CC   -!- SUBUNIT: Homotetramer composed of two homodimers linked non covalently.
+CC       Interacts with M, S and E proteins. Also interacts with the accessory
+CC       protein 7a (By similarity). {ECO:0000250}.
+CC   -!- SUBCELLULAR LOCATION: Virion {ECO:0000250}. Host Golgi apparatus
+CC       membrane {ECO:0000250}; Multi-pass membrane protein {ECO:0000250}. Host
+CC       cell membrane {ECO:0000250}; Multi-pass membrane protein {ECO:0000250}.
+CC       Secreted {ECO:0000250}. Host cytoplasm {ECO:0000250}. Note=The cell
+CC       surface expressed protein can undergo endocytosis. The protein is
+CC       secreted in association with membranous structures (By similarity).
+CC       {ECO:0000250}.
+CC   -!- DOMAIN: The second or the third transmembrane region are responsible
+CC       for Golgi localization. {ECO:0000250}.
+CC   -!- PTM: Exists in both O-glycosylated and non-glycosylated forms. The
+CC       glycosylated form is associated with the virion (By similarity).
+CC       {ECO:0000250}.
+CC   -!- MISCELLANEOUS: Bat coronavirus 279/2005 is highly similar to SARS-CoV
+CC       (SARS-like).
+CC   ---------------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   ---------------------------------------------------------------------------
+DR   EMBL; DQ648857; ABG47070.1; -; Genomic_RNA.
+DR   SMR; Q0Q474; -.
+DR   Proteomes; UP000006573; Genome.
+DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.
+DR   GO; GO:0044178; C:host cell Golgi membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0020002; C:host cell plasma membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0016021; C:integral component of membrane; IEA:UniProtKB-KW.
+DR   GO; GO:0044385; C:integral to membrane of host cell; IEA:UniProtKB-KW.
+DR   GO; GO:0005216; F:ion channel activity; IEA:UniProtKB-KW.
+DR   GO; GO:0039707; P:pore formation by virus in membrane of host cell; IEA:UniProtKB-KW.
+DR   GO; GO:0051259; P:protein complex oligomerization; IEA:UniProtKB-KW.
+DR   CDD; cd21648; SARS-CoV-like_ORF3a; 1.
+DR   InterPro; IPR024407; Protein_3a_bCoV.
+DR   Pfam; PF11289; bCoV_viroporin; 1.
+DR   PROSITE; PS51967; COV_VIROPORIN_3A_CD; 1.
+DR   PROSITE; PS51966; COV_VIROPORIN_3A_TM; 1.
+PE   3: Inferred from homology;
+KW   Apoptosis; Glycoprotein; Host cell membrane; Host cytoplasm;
+KW   Host Golgi apparatus; Host membrane; Ion channel; Ion transport; Membrane;
+KW   Secreted; Transmembrane; Transmembrane helix; Transport; Viral ion channel;
+KW   Virion.
+FT   CHAIN           1..274
+FT                   /note="Protein 3"
+FT                   /id="PRO_0000289887"
+FT   TOPO_DOM        1..34
+FT                   /note="Extracellular"
+FT                   /evidence="ECO:0000250"
+FT   TRANSMEM        35..55
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        56..78
+FT                   /note="Cytoplasmic"
+FT                   /evidence="ECO:0000255"
+FT   TRANSMEM        79..99
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        100..104
+FT                   /note="Extracellular"
+FT                   /evidence="ECO:0000255"
+FT   TRANSMEM        105..125
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        126..274
+FT                   /note="Cytoplasmic"
+FT                   /evidence="ECO:0000250"
+FT   DOMAIN          33..141
+FT                   /note="CoV 3a-like viroporin TM"
+FT                   /evidence="ECO:0000255|PROSITE-ProRule:PRU01311"
+FT   DOMAIN          145..237
+FT                   /note="CoV 3a-like viroporin CD"
+FT                   /evidence="ECO:0000255|PROSITE-ProRule:PRU01312"
+FT   SITE            133
+FT                   /note="Involved in polymerization"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        27
+FT                   /note="O-linked (GalNAc...) serine; by host"
+FT                   /evidence="ECO:0000255"
+FT   CARBOHYD        28
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        32
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        34
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000255"
+SQ   SEQUENCE   274 AA;  30854 MW;  CE4B26F0262F6D86 CRC64;
+     MDLFMSIFTL GAITRQPAKV ENASPASTVH ATATIPLQAS LPFGWLVVGV ALLAVFQSAS
+     KVIALHKRWQ LALYKGIQFV CNLLLLFVTI YSHLLLLAAG MEAQFLYIYA LIYILQIVSF
+     CRFIMRCWLC WKCRSKNPLL YDANYFVCWH TNCFDYCIPY NSITDTIVLT SGDGTTQPKL
+     KEDYQIGGYS EDWHSGVKDY VVIHGYFTEI YYQLESTQLS TDTGAENATF FIYSKLVKDV
+     DHVQIHTIDG SSGVVNPAMD PIYDEPTTTT SVPL
+//
+ID   AP3A_BCHK3              Reviewed;         274 AA.
+AC   Q3LZX0;
+DT   12-JUN-2007, integrated into UniProtKB/Swiss-Prot.
+DT   25-OCT-2005, sequence version 1.
+DT   29-SEP-2021, entry version 74.
+DE   RecName: Full=Protein 3;
+DE   AltName: Full=Accessory protein 3;
+GN   ORFNames=3;
+OS   Bat coronavirus HKU3 (BtCoV) (SARS-like coronavirus HKU3).
+OC   Viruses; Riboviria; Orthornavirae; Pisuviricota; Pisoniviricetes;
+OC   Nidovirales; Cornidovirineae; Coronaviridae; Orthocoronavirinae;
+OC   Betacoronavirus; Sarbecovirus.
+OX   NCBI_TaxID=442736;
+OH   NCBI_TaxID=89399; Rhinolophus sinicus (Chinese rufous horseshoe bat).
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC RNA].
+RC   STRAIN=Isolate HKU3-1;
+RX   PubMed=16169905; DOI=10.1073/pnas.0506735102;
+RA   Lau S.K.P., Woo P.C.Y., Li K.S.M., Huang Y., Tsoi H.-W., Wong B.H.L.,
+RA   Wong S.S.Y., Leung S.-Y., Chan K.-H., Yuen K.-Y.;
+RT   "Severe acute respiratory syndrome coronavirus-like virus in Chinese
+RT   horseshoe bats.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 102:14040-14045(2005).
+CC   -!- FUNCTION: Forms homotetrameric potassium sensitive ion channels
+CC       (viroporin) and may modulate virus release. Up-regulates expression of
+CC       fibrinogen subunits FGA, FGB and FGG in host lung epithelial cells.
+CC       Induces apoptosis in cell culture. Downregulates the type 1 interferon
+CC       receptor by inducing serine phosphorylation within the IFN alpha-
+CC       receptor subunit 1 (IFNAR1) degradation motif and increasing IFNAR1
+CC       ubiquitination (By similarity). {ECO:0000250}.
+CC   -!- SUBUNIT: Homotetramer composed of two homodimers linked non covalently.
+CC       Interacts with M, S and E proteins. Also interacts with the accessory
+CC       protein 7a (By similarity). {ECO:0000250}.
+CC   -!- SUBCELLULAR LOCATION: Virion {ECO:0000250}. Host Golgi apparatus
+CC       membrane {ECO:0000250}; Multi-pass membrane protein {ECO:0000250}. Host
+CC       cell membrane {ECO:0000250}; Multi-pass membrane protein {ECO:0000250}.
+CC       Secreted {ECO:0000250}. Host cytoplasm {ECO:0000250}. Note=The cell
+CC       surface expressed protein can undergo endocytosis. The protein is
+CC       secreted in association with membranous structures (By similarity).
+CC       {ECO:0000250}.
+CC   -!- DOMAIN: The second or the third transmembrane region are responsible
+CC       for Golgi localization. {ECO:0000250}.
+CC   -!- PTM: Exists in both O-glycosylated and non-glycosylated forms. The
+CC       glycosylated form is associated with the virion (By similarity).
+CC       {ECO:0000250}.
+CC   -!- MISCELLANEOUS: Bat coronavirus HKU3 is highly similar to SARS-CoV
+CC       (SARS-like).
+CC   ---------------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   ---------------------------------------------------------------------------
+DR   EMBL; DQ022305; AAY88867.1; -; Genomic_RNA.
+DR   SMR; Q3LZX0; -.
+DR   Proteomes; UP000007450; Genome.
+DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.
+DR   GO; GO:0044178; C:host cell Golgi membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0020002; C:host cell plasma membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0016021; C:integral component of membrane; IEA:UniProtKB-KW.
+DR   GO; GO:0044385; C:integral to membrane of host cell; IEA:UniProtKB-KW.
+DR   GO; GO:0005216; F:ion channel activity; IEA:UniProtKB-KW.
+DR   GO; GO:0039707; P:pore formation by virus in membrane of host cell; IEA:UniProtKB-KW.
+DR   GO; GO:0051259; P:protein complex oligomerization; IEA:UniProtKB-KW.
+DR   CDD; cd21648; SARS-CoV-like_ORF3a; 1.
+DR   InterPro; IPR024407; Protein_3a_bCoV.
+DR   Pfam; PF11289; bCoV_viroporin; 1.
+DR   PROSITE; PS51967; COV_VIROPORIN_3A_CD; 1.
+DR   PROSITE; PS51966; COV_VIROPORIN_3A_TM; 1.
+PE   3: Inferred from homology;
+KW   Apoptosis; Glycoprotein; Host cell membrane; Host cytoplasm;
+KW   Host Golgi apparatus; Host membrane; Ion channel; Ion transport; Membrane;
+KW   Secreted; Transmembrane; Transmembrane helix; Transport; Viral ion channel;
+KW   Virion.
+FT   CHAIN           1..274
+FT                   /note="Protein 3"
+FT                   /id="PRO_0000291328"
+FT   TOPO_DOM        1..34
+FT                   /note="Extracellular"
+FT                   /evidence="ECO:0000250"
+FT   TRANSMEM        35..55
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        56..78
+FT                   /note="Cytoplasmic"
+FT                   /evidence="ECO:0000255"
+FT   TRANSMEM        79..99
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        100..104
+FT                   /note="Extracellular"
+FT                   /evidence="ECO:0000255"
+FT   TRANSMEM        105..125
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        126..274
+FT                   /note="Cytoplasmic"
+FT                   /evidence="ECO:0000250"
+FT   DOMAIN          33..141
+FT                   /note="CoV 3a-like viroporin TM"
+FT                   /evidence="ECO:0000255|PROSITE-ProRule:PRU01311"
+FT   DOMAIN          145..237
+FT                   /note="CoV 3a-like viroporin CD"
+FT                   /evidence="ECO:0000255|PROSITE-ProRule:PRU01312"
+FT   SITE            133
+FT                   /note="Involved in polymerization"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        27
+FT                   /note="O-linked (GalNAc...) serine; by host"
+FT                   /evidence="ECO:0000255"
+FT   CARBOHYD        28
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        32
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        34
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000255"
+SQ   SEQUENCE   274 AA;  30984 MW;  D5D4AB36E610187C CRC64;
+     MDLFMSIFTL GAITRNPAKI ENASPASTVH ATATIPLQAT FPFGWLIVGV ALLAVFQSAS
+     KVIALHRRWQ LALYKGVQLV CNMLLLFVTI YSHLLLLAAC MEAQFLYIYA LIYILQIVSF
+     CRFIMRCWLC WKCRSKNPLL YDANYFVCWH TNNYDYCIPY NSVTDTVVIT SGDGTNQPKL
+     KEDYQIGGYS EDWHSGVKDY VVIYGYFTEV YYQLESTQLS TDTGAENATF FIYSKLVKDV
+     DHVQIHTIDG SSGVVNPAMD PIYDEPTTTT SVPL
+//
+ID   AP3A_BCRP3              Reviewed;         274 AA.
+AC   Q3I5J4;
+DT   22-NOV-2005, integrated into UniProtKB/Swiss-Prot.
+DT   08-NOV-2005, sequence version 1.
+DT   29-SEP-2021, entry version 76.
+DE   RecName: Full=Protein 3;
+DE   AltName: Full=Accessory protein 3;
+GN   ORFNames=3;
+OS   Bat coronavirus Rp3/2004 (BtCoV/Rp3/2004) (SARS-like coronavirus Rp3).
+OC   Viruses; Riboviria; Orthornavirae; Pisuviricota; Pisoniviricetes;
+OC   Nidovirales; Cornidovirineae; Coronaviridae; Orthocoronavirinae;
+OC   Betacoronavirus; Sarbecovirus.
+OX   NCBI_TaxID=349344;
+OH   NCBI_TaxID=59479; Rhinolophus ferrumequinum (Greater horseshoe bat).
+OH   NCBI_TaxID=196889; Rhinolophus macrotis (Big-eared horseshoe bat).
+OH   NCBI_TaxID=188571; Rhinolophus pearsonii.
+OH   NCBI_TaxID=89399; Rhinolophus sinicus (Chinese rufous horseshoe bat).
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC RNA].
+RX   PubMed=16195424; DOI=10.1126/science.1118391;
+RA   Li W., Shi Z., Yu M., Ren W., Smith C., Epstein J.H., Wang H., Crameri G.,
+RA   Hu Z., Zhang H., Zhang J., McEachern J., Field H., Daszak P., Eaton B.T.,
+RA   Zhang S., Wang L.F.;
+RT   "Bats are natural reservoirs of SARS-like coronaviruses.";
+RL   Science 310:676-679(2005).
+CC   -!- FUNCTION: Forms homotetrameric potassium sensitive ion channels
+CC       (viroporin) and may modulate virus release. Up-regulates expression of
+CC       fibrinogen subunits FGA, FGB and FGG in host lung epithelial cells.
+CC       Induces apoptosis in cell culture. Downregulates the type 1 interferon
+CC       receptor by inducing serine phosphorylation within the IFN alpha-
+CC       receptor subunit 1 (IFNAR1) degradation motif and increasing IFNAR1
+CC       ubiquitination (By similarity). {ECO:0000250}.
+CC   -!- SUBUNIT: Homotetramer composed of two homodimers linked non covalently.
+CC       Interacts with M, S and E proteins. Also interacts with the accessory
+CC       protein 7a (By similarity). {ECO:0000250}.
+CC   -!- SUBCELLULAR LOCATION: Virion {ECO:0000250}. Host Golgi apparatus
+CC       membrane {ECO:0000250}; Multi-pass membrane protein {ECO:0000250}. Host
+CC       cell membrane {ECO:0000250}; Multi-pass membrane protein {ECO:0000250}.
+CC       Secreted {ECO:0000250}. Host cytoplasm {ECO:0000250}. Note=The cell
+CC       surface expressed protein can undergo endocytosis. The protein is
+CC       secreted in association with membranous structures (By similarity).
+CC       {ECO:0000250}.
+CC   -!- DOMAIN: The second or the third transmembrane region are responsible
+CC       for Golgi localization. {ECO:0000250}.
+CC   -!- PTM: Exists in both O-glycosylated and non-glycosylated forms. The
+CC       glycosylated form is associated with the virion (By similarity).
+CC       {ECO:0000250}.
+CC   -!- MISCELLANEOUS: Bat coronavirus rp3 is highly similar to SARS-CoV (SARS-
+CC       like).
+CC   ---------------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   ---------------------------------------------------------------------------
+DR   EMBL; DQ071615; AAZ67053.1; -; Genomic_RNA.
+DR   SMR; Q3I5J4; -.
+DR   Proteomes; UP000006570; Genome.
+DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.
+DR   GO; GO:0044178; C:host cell Golgi membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0020002; C:host cell plasma membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0016021; C:integral component of membrane; IEA:UniProtKB-KW.
+DR   GO; GO:0044385; C:integral to membrane of host cell; IEA:UniProtKB-KW.
+DR   GO; GO:0005216; F:ion channel activity; IEA:UniProtKB-KW.
+DR   GO; GO:0039707; P:pore formation by virus in membrane of host cell; IEA:UniProtKB-KW.
+DR   GO; GO:0051259; P:protein complex oligomerization; IEA:UniProtKB-KW.
+DR   CDD; cd21648; SARS-CoV-like_ORF3a; 1.
+DR   InterPro; IPR024407; Protein_3a_bCoV.
+DR   Pfam; PF11289; bCoV_viroporin; 1.
+DR   PROSITE; PS51967; COV_VIROPORIN_3A_CD; 1.
+DR   PROSITE; PS51966; COV_VIROPORIN_3A_TM; 1.
+PE   3: Inferred from homology;
+KW   Apoptosis; Glycoprotein; Host cell membrane; Host cytoplasm;
+KW   Host Golgi apparatus; Host membrane; Ion channel; Ion transport; Membrane;
+KW   Secreted; Transmembrane; Transmembrane helix; Transport; Viral ion channel;
+KW   Virion.
+FT   CHAIN           1..274
+FT                   /note="Protein 3"
+FT                   /id="PRO_0000106130"
+FT   TOPO_DOM        1..34
+FT                   /note="Extracellular"
+FT                   /evidence="ECO:0000250"
+FT   TRANSMEM        35..55
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        56..78
+FT                   /note="Cytoplasmic"
+FT                   /evidence="ECO:0000255"
+FT   TRANSMEM        79..99
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        100..104
+FT                   /note="Extracellular"
+FT                   /evidence="ECO:0000255"
+FT   TRANSMEM        105..125
+FT                   /note="Helical"
+FT                   /evidence="ECO:0000255"
+FT   TOPO_DOM        126..274
+FT                   /note="Cytoplasmic"
+FT                   /evidence="ECO:0000250"
+FT   DOMAIN          33..141
+FT                   /note="CoV 3a-like viroporin TM"
+FT                   /evidence="ECO:0000255|PROSITE-ProRule:PRU01311"
+FT   DOMAIN          145..237
+FT                   /note="CoV 3a-like viroporin CD"
+FT                   /evidence="ECO:0000255|PROSITE-ProRule:PRU01312"
+FT   SITE            133
+FT                   /note="Involved in polymerization"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        27
+FT                   /note="O-linked (GalNAc...) serine; by host"
+FT                   /evidence="ECO:0000255"
+FT   CARBOHYD        28
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        32
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000250"
+FT   CARBOHYD        34
+FT                   /note="O-linked (GalNAc...) threonine; by host"
+FT                   /evidence="ECO:0000255"
+SQ   SEQUENCE   274 AA;  30794 MW;  AE17D810FD454594 CRC64;
+     MDLFMSIFTL GAITRQPAKI ENASPASTVH ATATIPLQAS LPFGWLVVGV ALLAVFQSAS
+     KVIALHKRWQ LALHKGIQLV CNLLLLFVTI YSHLLLLAAG MEAQFLYIYA LIYILQIVSF
+     CRFIMRCWLC WKCRSKNPLL YDANYFVCWH TNCFDYCIPY NSITDTIVLT SGDGTTQPKL
+     KEDYQIGGYS EDWHSGVKDY VVIHGYFTEV YYQLESTQLS TDTGAENATF FIYSKLVKDV
+     DHVQIHTIDG SSGVVNPAMD PIYDEPTTTT SVPL
+//
