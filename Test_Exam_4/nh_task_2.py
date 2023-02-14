@@ -34,14 +34,13 @@ class UniProtParser:
         for line in file:
             line = line.decode() if is_binary else line
             if line.startswith(bos):
-                id = line.split("   ")[1]
                 if is_first:
+                    id = line.split("   ")[1]
                     is_first = False
                 else:
-                    if id == "NS4A_CVH22":
-                        a = 0
                     file_dict.update({id: content})
                     content: Dict = {key: [] for key in filter_on}
+                    id = line.split("   ")[1]
             else:
                 line_start: str = line[:2]
                 if line_start in filter_on:
@@ -49,6 +48,7 @@ class UniProtParser:
 
         # to catch the last entry
         file_dict.update({id: content})
+        file.close()
         return file_dict
 
     def extract_go_ids(self, file_names):
@@ -66,7 +66,7 @@ class UniProtParser:
 
                 for go_id in file_dicts[key]["DR"]:
                     if "GO:" in go_id:
-                        sub_strings.append(f"{key}\t {go_id[4:13]}")
+                        sub_strings.append(f"{key}\t {go_id[4:14]}")
 
                 if len(sub_strings) == 0:
                     return_strings.append(f"{key}\t NA")
