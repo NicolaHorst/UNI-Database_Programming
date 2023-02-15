@@ -49,39 +49,32 @@ def extract_sequences(file_name: str) -> Dict:
     """
     file_dict: Dict = {}
 
-    is_first: bool = True
-    is_binary: bool = False
+    # some flags
+    is_binary: bool = True if file_name.endswith(".dat.gz") else False
     is_sq: bool = False
 
-    id: str = ""
-    seq: str = ""
+    # current id
+    id = ""
 
     if file_name.endswith(".dat.gz"):
         file = gzip.open(file_name, "rb")
-        is_binary = True
     else:
         file = open(file_name, "r")
 
     for line in file:
         line = line.decode() if is_binary else line
-        if line.startswith("ID") or line.startswith("SQ"):
-            if line.startswith("ID"):
-                if is_first:
-                    is_first = False
-                    id = line.split("   ")[1]
-                else:
-                    file_dict.update({id: seq[:-1]})
-                    seq = ""
-                    id = line.split("   ")[1]
-            else:
+        if line.startswith("ID"):
+                id = line.split("   ")[1]
+                file_dict.update({id: []})
+        elif line.startswith("SQ") or is_sq:
+            if line.startswith("SQ"):
                 is_sq = True
-        elif is_sq:
-            if line.startswith("     "):
-                seq += line[5:].strip("\n") + " "
-            else:
+                continue
+            elif line.startswith("//"):
                 is_sq = False
-
-    file_dict.update({id: seq[:-1]})
+            else:
+                line = line.strip()
+                file_dict[id].append(line.strip("\n"))
 
     return file_dict
 
@@ -122,7 +115,7 @@ def extract_doi(fn: str) -> Dict:
 
 
 if __name__ == "__main__":
-    path = r"C:\Users\nic-e\OneDrive\Dokumente\GitHub\UNI-Database_Programming\Test_Exam_4\uniprot-corona-virus-data-2022-02_short.dat"
+    path = r"/Users/I518095/Documents/GitHub/UNI-Database_Programming/Test_Exam_4/uniprot-corona-virus-data-2022-02.dat"
     f = extract_from_dr(fn=path, match_on="GO;")
     g = extract_from_dr(fn=path, match_on="KEGG;")
     a = uniprot_file_to_dict(file_name=path)

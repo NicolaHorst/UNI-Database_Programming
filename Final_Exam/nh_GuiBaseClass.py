@@ -18,7 +18,6 @@ class GuiBaseClass:
         menu_file = tk.Menu(self.menubar)
         self.menubar.add_cascade(menu=menu_file, label='File', underline=0,)
         menu_file.add_separator()
-        menu_file.add_command(label='Exit', command=self.exit, underline=1)
 
         # add menu option help
         menu_help = tk.Menu(self.menubar)
