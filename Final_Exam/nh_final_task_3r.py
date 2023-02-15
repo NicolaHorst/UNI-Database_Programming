@@ -5,9 +5,8 @@ from typing import List, Dict
 
 import tkinter as tk
 from tkinter import ttk
-import tkinter.filedialog as fd
 
-from gui_base_class.nh_GuiBaseClass import GuiBaseClass
+from nh_GuiBaseClass import GuiBaseClass
 from DGScrolled import DGScrolled
 
 
@@ -27,13 +26,13 @@ def usage():
 
         for GUI:
             Explain what GUI version does
-        
+
             example usage for gui
             nh_task3.py -gui ?[FILE]
-            
+
         for Terminal:
             Explain what Terminal version does
-            
+
             example arguments for terminal mode could be:
             nh_task3.py ?[FILE] [Additional Arg]
         """)
@@ -55,9 +54,10 @@ class SampleGui(GuiBaseClass):
         self.file_name: str = file_name if os.path.isfile(file_name) else self.open_file_dialog()
 
         # setting dir name
-        self.dir_name: str = ""  # = dir_name if os.path.isdir(dir_name) else self.open_dir_name_dialog
-        # names = os.listdir(self.dir_name)
-        # self.file_names = [dir_name + "/" + name for name in names if name.endswith(".dat") or name.endswith(".dat.gz")]
+        #self.dir_name: str = ""  # = dir_name if os.path.isdir(dir_name) else self.open_dir_name_dialog
+        #names = os.listdir(self.dir_name)
+        #self.file_names = [name for name in names if name.endswith(".dat") or name.endswith(".dat.gz")]
+        #self.absolute_path_mapping: Dict = {file_name: self.dir_name + "/" + file_name for file_name in self.file_names}
 
         # open the given file and add a dictionary representation of it
         self.file_dict = generic_file_reader_wrapper(fn=file_name)
@@ -78,43 +78,79 @@ class SampleGui(GuiBaseClass):
         self.top_frame = ttk.Frame(self.get_frame())
 
         # create the entry and the buttons
-        self.entry = ttk.Entry(self.top_frame, width=30)
+        self.entry = ttk.Entry(self.top_frame, width=10)
 
-        self.btn_frame = ttk.Frame(self.top_frame)
-        self.btn1 = ttk.Button(self.btn_frame, text="Button 1", width=20, command=self.button_1_on_ckick)
-        self.btn_2 = ttk.Button(self.btn_frame, text="Show Entry", width=20, command=self.button_2_on_ckick)
+        # add combobox to the top bar
+        self.combobox_values = ["Entry 1", "Entry 2"]
+        self.combobox = ttk.Combobox(self.top_frame, values=self.combobox_values, width=10)
+        # set active value
+        # self.combobox.current(0)
+        # bind a callback to the combobox
+        self.combobox.bind('<<ComboboxSelected>>', self.combobox_on_select)
 
-        self.entry.pack(anchor="center", side="left", expand=False)
-        self.btn1.pack(anchor="center", side="left", expand=False)
-        self.btn_2.pack(anchor="center", side="right", expand=False)
+        # add button in top bar
+        self.button = ttk.Button(self.top_frame, text="Click Me", command=self.button_on_click, width=10)
 
-        self.btn_frame.pack(side="right", anchor="center", expand=False)
-        self.top_frame.pack(side="top", anchor="center", expand=False)
+        # pack components for position change order of pack
+        self.entry.pack(side="left", expand=True, fill="x")
+        self.combobox.pack(side="left", expand=True, fill="x")
+        self.button.pack(side="left", expand=True, fill="x")
+
+        self.top_frame.pack(side="top", anchor="center", expand=False, fill="x")
+
+        # Bottom Container
+        self.bottom_frame = ttk.Panedwindow(self.get_frame(), orient=tk.HORIZONTAL)
 
         # add text widget
-        self.text_frame = ttk.Frame(self.get_frame())
-        self.text = tk.Text(self.text_frame)
+        self.text = tk.Text(self.bottom_frame, width=40)
         DGScrolled(self.text)
-        self.text_frame.pack(side="top", expand=True, fill="both")
+
+        # Add listbox
+        self.list_box = tk.Listbox(self.bottom_frame, exportselection=False, width=20)
+        self.list_box.bind("<<ListboxSelect>>", self.list_on_click)
+        self.list_items: List = ["List Entry 1", "List Entry 2", "List Entry 3"]
+        for item in self.list_items:
+            self.list_box.insert(tk.END, item)
+
+        # add to frame
+        self.bottom_frame.add(self.list_box)
+        self.bottom_frame.add(self.text)
+
+        # pack bottom frame
+        self.bottom_frame.pack(expand=True, fill="both")
 
         # add status bar
         self.add_status_bar()
         self.set_status_bar_text(self.file_name.split("/")[-1])
         self.set_status_bar_progress(50)
 
-    def button_1_on_ckick(self):
+    def button_on_click(self):
         """
         perform action when button 1 is pressed
         :return:
         """
-        print("Button 1 was pressed")
+        combobox_text = self.combobox.get()
+        if combobox_text not in self.combobox['values']:
+            self.combobox['values'] = (*self.combobox['values'], combobox_text)
+        print(f"combobox text is {combobox_text}")
 
-    def button_2_on_ckick(self):
+    def list_on_click(self, event):
         """
         Perform the action when button 2 is pressed
         :return:
         """
-        print("Button 2 was pressed")
+        w = event.widget
+        index = int(w.curselection()[0])
+        value = w.get(index)
+        print(f"clicked {value}")
+
+    def combobox_on_select(self, event):
+        """
+        Handle the event when a new element is selected
+        :param event: the select event
+        :return: None
+        """
+        print(self.combobox.get())
 
     def open_file_name(self) -> None:
         """
@@ -134,15 +170,20 @@ class SampleGui(GuiBaseClass):
 
 if __name__ == "__main__":
     args: List = sys.argv
-    file_name: str = ""
+    file_or_dir_name: str = ""
 
     if len(args) == 1 or "-h" in args or "--help" in args:
         usage()
     else:
         if "-gui" in args:
+            # if file or directory name is provided get it
+            if len(args) > 2:
+                file_or_dir_name = args[2]
+
             root = tk.Tk()
             root.title("Sample Application")
-            sample_gui: SampleGui = SampleGui(root=root, file_name=file_name)
+            root.geometry("600x400")
+            sample_gui: SampleGui = SampleGui(root=root, file_name=file_or_dir_name)
             sample_gui.main_loop()
         else:
             run_command_line_tool(arguments=args)

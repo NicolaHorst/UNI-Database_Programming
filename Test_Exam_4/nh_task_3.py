@@ -51,7 +51,7 @@ class UniProtGui(GuiBaseClass):
             self.dir_name: str = dir_name
 
         names = os.listdir(self.dir_name)
-        self.file_names = [name for name in names if name.endswith(".dat") or name.endswith(".dat.gz")]
+        self.file_names = [dir_name + "/" + name for name in names if name.endswith(".dat") or name.endswith(".dat.gz")]
         self.open_file = self.uniprod_parser.uniprot_file_to_dict(filter_on=["DR"], file_name=self.file_names[0])
 
         # Add Menu help
