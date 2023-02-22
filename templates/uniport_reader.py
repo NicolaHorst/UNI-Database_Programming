@@ -48,12 +48,9 @@ def extract_sequences(file_name: str) -> Dict:
     :return: A dictionary with key ID value String version of sequence
     """
     file_dict: Dict = {}
-
     # some flags
     is_binary: bool = True if file_name.endswith(".dat.gz") else False
     is_sq: bool = False
-
-    # current id
     id = ""
 
     if file_name.endswith(".dat.gz"):
@@ -67,10 +64,10 @@ def extract_sequences(file_name: str) -> Dict:
                 id = line.split("   ")[1]
                 file_dict.update({id: []})
         elif line.startswith("SQ") or is_sq:
-            if line.startswith("SQ"):
+            if line.startswith("SQ"):  # Beginning of Sequence is reached
                 is_sq = True
                 continue
-            elif line.startswith("//"):
+            elif line.startswith("//"):  # End of Sequence is reached
                 is_sq = False
             else:
                 line = line.strip()
