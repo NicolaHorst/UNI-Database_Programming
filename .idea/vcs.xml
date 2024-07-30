@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../UNI-Dynamic_Programming_and_Reinforcement_Learning" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../UNI-Machine_Learning" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../uni_bayesian" vcs="Git" />
   </component>
 </project>

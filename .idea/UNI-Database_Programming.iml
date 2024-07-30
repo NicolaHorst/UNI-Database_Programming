@@ -4,5 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.11" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="UNI-Machine_Learning" />
+    <orderEntry type="module" module-name="uni_bayesian" />
+    <orderEntry type="module" module-name="UNI-Dynamic_Programming_and_Reinforcement_Learning" />
   </component>
 </module>

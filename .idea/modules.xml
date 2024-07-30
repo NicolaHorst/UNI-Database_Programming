@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/UNI-Database_Programming.iml" filepath="$PROJECT_DIR$/.idea/UNI-Database_Programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UNI-Dynamic_Programming_and_Reinforcement_Learning/.idea/UNI-Dynamic_Programming_and_Reinforcement_Learning.iml" filepath="$PROJECT_DIR$/../UNI-Dynamic_Programming_and_Reinforcement_Learning/.idea/UNI-Dynamic_Programming_and_Reinforcement_Learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UNI-Machine_Learning/.idea/UNI-Machine_Learning.iml" filepath="$PROJECT_DIR$/../UNI-Machine_Learning/.idea/UNI-Machine_Learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../anlp-final-project/.idea/anlp-final-project.iml" filepath="$PROJECT_DIR$/../anlp-final-project/.idea/anlp-final-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../uni_bayesian/.idea/uni_bayesian.iml" filepath="$PROJECT_DIR$/../uni_bayesian/.idea/uni_bayesian.iml" />
     </modules>
   </component>
 </project>
